@@ -1,0 +1,12 @@
+{
+  "name": "container-benchmarks",
+  "private": true,
+  "scripts": {
+    "check": "ultracite check",
+    "fix": "ultracite fix"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.16",
+    "ultracite": "7.8.3"
+  }
+}
