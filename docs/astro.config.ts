@@ -11,10 +11,33 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Container Benchmarks",
-      plugins: [lucodeStarlight()],
+      plugins: [
+        lucodeStarlight({
+          footerText: "Built open-source by fermeridamagni",
+          docs: {
+            includeAiUtilities: true,
+          },
+          navLinks: [
+            {
+              label: "Blog Article",
+              link: "https://magni.dev/blog/articles/apple-container-vs-orbstack-docker-benchmarks",
+            },
+          ],
+        }),
+      ],
       customCss: [
         // Relative path to your custom CSS file
         "./src/styles/custom.css",
+      ],
+      lastUpdated: true,
+      credits: false,
+      favicon: "https://assets.magni.dev/icons/favicon.ico",
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/fermeridamagni/container-benchmarks",
+        },
       ],
       sidebar: [
         {
@@ -28,6 +51,9 @@ export default defineConfig({
     }),
     react(),
   ],
+  image: {
+    domains: ["assets.magni.dev"],
+  },
   vite: {
     plugins: [tailwindcss()],
   },
