@@ -6,7 +6,7 @@ import lucodeStarlight from "lucode-starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://github.io",
+  site: "https://fermeridamagni.github.io",
   base: "/container-benchmarks",
   integrations: [
     starlight({
