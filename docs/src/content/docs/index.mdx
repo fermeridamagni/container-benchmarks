@@ -1,0 +1,42 @@
+---
+title: "OrbStack vs Apple Containers Benchmark"
+description: "A comprehensive benchmark comparison between OrbStack Docker and Apple Containers v1.0.0"
+template: splash
+hero:
+  tagline: "Which macOS container runtime is faster, leaner, and better for developers?"
+  actions:
+    - text: View Performance Benchmarks
+      link: /container-benchmarks/benchmarks/performance/
+      icon: right-arrow
+      variant: primary
+    - text: View Image Size Benchmarks
+      link: /container-benchmarks/benchmarks/image-size/
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<div className="flex w-full flex-col items-center px-6 py-12">
+  <div className="w-full max-w-5xl">
+    <h2 className="text-center">The Verdict</h2>
+    <p className="text-center text-gray-400 mb-8 mt-2">
+      After running extensive benchmarks on Apple Silicon, we have compared **OrbStack Docker** against the newly released **Apple Containers v1.0.0**.
+    </p>
+
+    <CardGrid stagger>
+	<Card title="Speed & Performance" icon="rocket">
+		Apple Containers v1.0.0 shows incredible promise with native Virtualization framework integration, but OrbStack's highly optimized micro-VM still leads in overall execution speed.
+	</Card>
+	<Card title="Resource Usage" icon="laptop">
+		Apple Containers assigns a lightweight VM per container, providing excellent isolation. However, OrbStack's shared VM model can be more memory-efficient when running dozens of containers simultaneously.
+	</Card>
+	<Card title="Customization" icon="setting">
+		OrbStack offers a mature GUI, network bridging, and easy volume management. Apple Containers provides a clean, CLI-native approach that appeals to minimalists and CI/CD pipelines.
+	</Card>
+	<Card title="Final Recommendation" icon="approve-check">
+		**Recommended:** We recommend **OrbStack** for daily driver development due to its rich feature set and slightly faster general performance. **Apple Containers** is highly recommended for users who want a pure, open-source Apple native solution without third-party daemons.
+	</Card>
+</CardGrid>
+
+  </div>
+</div>

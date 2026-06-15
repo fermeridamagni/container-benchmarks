@@ -1,0 +1,29 @@
+---
+title: "Image Size Benchmarks"
+description: "Comparison of image sizes on disk between OrbStack Docker and Apple Containers"
+---
+
+import BenchmarkChart from '../../../components/benchmark-chart';
+
+## Image Storage Comparison
+
+Both OrbStack Docker and Apple Containers are OCI-compliant, meaning they pull the same images. However, how they store these images internally on macOS can affect the total disk footprint.
+
+### Compressed Image Size on Disk
+
+The sizes reported below represent the actual space taken on the host filesystem by the respective container image layers.
+
+<BenchmarkChart 
+  client:load 
+  title="Image Size on Disk (MB)" 
+  yAxisLabel="Size (MB)"
+  data={[
+    { name: 'Alpine', docker: 7.3, container: 7.5 },
+    { name: 'Ubuntu', docker: 77.8, container: 78.1 },
+    { name: 'Debian', docker: 116.5, container: 117.0 }
+  ]} 
+/>
+
+### Analysis
+
+Both runtimes are highly efficient. Apple Containers generally matches OrbStack Docker's footprint because both utilize native macOS filesystem features (like APFS clones and sparse files) to store layers optimally.
