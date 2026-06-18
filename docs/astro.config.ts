@@ -20,7 +20,7 @@ export default defineConfig({
           navLinks: [
             {
               label: "Blog Article",
-              link: "https://magni.dev/blog/articles/apple-container-vs-orbstack-docker-benchmarks",
+              link: "https://magni.dev/blog/articles/apple-container-vs-orbstack-docker",
             },
           ],
         }),
